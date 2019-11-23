@@ -21,6 +21,11 @@ public class Application {
         return queryIp();
     }
 
+    @GetMapping("/ping")
+    public String ping() throws Exception{
+        return "pong";
+    }
+
     private String queryIp() throws Exception{
         HttpResponse<String> response = HttpClient.newHttpClient()
                 .send(HttpRequest.newBuilder(
